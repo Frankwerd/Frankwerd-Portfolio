@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import GitHubButton from 'react-github-btn';
 
 /* ---------- quick-question data ---------- */
@@ -36,7 +36,7 @@ const questionConfig = [
 ] as const;
 
 /* ---------- component ---------- */
-export default function Home() {
+function PageContent() {
   const [input, setInput] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams(); 
@@ -208,5 +208,13 @@ export default function Home() {
       </motion.div>
       <FluidCursor />
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageContent />
+    </Suspense>
   );
 }

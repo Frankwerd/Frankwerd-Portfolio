@@ -1,4 +1,4 @@
-// src/components/chat/tool-renderer.tsx
+'use client';
 import { Contact } from '../contact';
 import Crazy from '../crazy';
 import InternshipCard from '../InternshipCard';
