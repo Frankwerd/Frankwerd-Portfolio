@@ -36,12 +36,14 @@ const questionConfig = [
 ] as const;
 
 /* ---------- component ---------- */
-function PageContent() {
+interface PageContentProps {
+  showProjects: boolean;
+}
+
+function PageContent({ showProjects }: PageContentProps) {
   const [input, setInput] = useState('');
   const router = useRouter();
-  const searchParams = useSearchParams(); 
   const inputRef = useRef<HTMLInputElement>(null);
-  const showProjects = searchParams.get('viewProjects') === 'true'; 
 
   const goToChat = (query: string) =>
     router.push(`/chat?query=${encodeURIComponent(query)}`);
@@ -211,10 +213,16 @@ function PageContent() {
   );
 }
 
+function SearchParamsHandler() {
+  const searchParams = useSearchParams();
+  const showProjects = searchParams.get('viewProjects') === 'true';
+  return <PageContent showProjects={showProjects} />;
+}
+
 export default function Home() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <PageContent />
+    <Suspense fallback={<div>Loading page content with params...</div>}>
+      <SearchParamsHandler />
     </Suspense>
   );
 }
