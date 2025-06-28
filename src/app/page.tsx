@@ -95,7 +95,7 @@ function PageContent() {
 
       <div className="absolute top-6 right-8 z-20">
         <GitHubButton
-          href="https://github.com/Frankwerd"
+          href="https://github.com/Frankwerd/Frankwerd-Portfolio"
           data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
           data-size="large"
           data-show-count="true"

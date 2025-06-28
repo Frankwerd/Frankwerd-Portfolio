@@ -333,7 +333,7 @@ const ChatContent: React.FC<ChatContentProps> = ({ initialQuery }) => {
         />
         <div className="pt-2">
           <GitHubButton
-            href="https://github.com/Frankwerd"
+            href="https://github.com/Frankwerd/Frankwerd-Portfolio"
             data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
             data-size="large"
             data-show-count="true"
