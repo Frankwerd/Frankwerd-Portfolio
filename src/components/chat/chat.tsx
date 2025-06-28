@@ -105,11 +105,13 @@ const MOTION_CONFIG = {
   },
 };
 
-const Chat = () => {
+interface ChatContentProps {
+  initialQuery: string | null;
+}
+
+const ChatContent: React.FC<ChatContentProps> = ({ initialQuery }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const initialQuery = searchParams.get('query');
+  const router = useRouter(); // useRouter can stay as it's not the one causing Suspense issues here
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [isTalking, setIsTalking] = useState(false);
@@ -449,6 +451,13 @@ const Chat = () => {
       </div>
     </div>
   );
+};
+
+const Chat = () => {
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams.get('query');
+
+  return <ChatContent initialQuery={initialQuery} />;
 };
 
 export default Chat;
