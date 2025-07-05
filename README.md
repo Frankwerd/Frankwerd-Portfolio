@@ -18,7 +18,7 @@ Instead of endless scrolling, my AI persona adapts to *your* curiosity. Just ask
 
 This isn't just a portfolio; it’s a **dynamic conversation, shaped by your specific interests**.
 
-➡️ **Try it now:** [Your Portfolio Link Here]
+➡️ **Try it now:** https://francisjbutti.vercel.app/
 *What will you ask?*
 
 ---
