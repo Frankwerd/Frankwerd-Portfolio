@@ -118,6 +118,25 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       { src: '/solar4.png', alt: 'Cleantech Venture Placeholder' }
     ],
   },
+  {
+    title: 'Bay1 Consulting Group',
+    role: 'Founder & Lead Consultant',
+    description: "Bay1 Consulting Group was a boutique consultancy that helped organizations achieve their goals through a unique blend of strategic funding acquisition and compelling digital communication. We didn't just find the money; we built the systems and created the materials needed to secure it, report on it, and support the organization's broader mission.",
+    context: "Specializing in empowering non-profits and small businesses, Bay1 focused on a twofold approach: acquiring and managing over $2MM in grant funding with automated compliance dashboards, and designing communication strategies including compelling proposals and high-engagement HTML email campaigns.",
+    processHighlights: [
+      "Spearheaded fiscal analysis and project management for $2MM+ in grant funding across 30+ government agencies and private foundations.",
+      "Designed and coded high-impact HTML email campaigns and marketing materials, increasing key metrics like click-through rates by up to 87% and user engagement by 80%.",
+      "Developed automated dashboards (Excel, Python) for grant compliance tracking and performance monitoring, reducing reporting errors by 20%.",
+      "Provided end-to-end proposal development, from research and copywriting to graphic design, contributing to over $45,000 in new grant funding for partners.",
+      "Conducted risk analysis to identify potential fraudulent activity, ensuring 100% compliance with non-profit regulatory frameworks for all managed funds.",
+      "Consulted on business process automation, designing workflows to connect business tools and reduce time spent on administrative tasks."
+    ],
+    solutionSummary: "Bay1 Consulting Group provided end-to-end grant acquisition, management, and strategic communication services, leveraging data, design, and automation to drive sustainable growth for clients.",
+    techStack: ['Grant Writing', 'Proposal Development', 'Grant Management', 'Fundraising', 'Non-Profit Consulting', 'Compliance & Reporting', 'Fiscal Analysis', 'Project Lifecycle Management', 'Stakeholder Communication', 'Risk Assessment', 'Strategic Planning', 'HTML Email Marketing', 'Copywriting', 'Graphic Design', 'Brand Identity', 'Data Visualization', 'Case Study Development', 'Business Process Automation', 'Data Analysis', 'Microsoft Excel (Advanced)', 'Python (for scripting/automation)'],
+    resultsAndLearnings: "Successfully secured over $2MM in grant funding, increased client engagement by over 80% through targeted campaigns, and improved operational efficiency through automation. Key learnings involved the power of integrating analytical rigor with creative execution to achieve client objectives.",
+    date: '2022 – 2023',
+    images: [{ src: '/logo-fjl.png', alt: 'Bay1 Consulting Group Placeholder' }],
+  }
 ];
 
 interface CarouselCardProps {
@@ -292,5 +311,11 @@ export const data: CarouselCardProps[] = [
     title: 'Cleantech Venture (E-Scooter Retrofitting)',
     src: '/solarpreview.png', 
     content: <ProjectContent projectTitle="Cleantech Venture (E-Scooter Retrofitting)" />,
+  },
+  {
+    category: 'Consulting & Strategy',
+    title: 'Bay1 Consulting Group',
+    src: '/logo-fjl.png', // Placeholder, ensure this image exists or replace
+    content: <ProjectContent projectTitle="Bay1 Consulting Group" />,
   },
 ];
