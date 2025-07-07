@@ -37,7 +37,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     status: "Public launch Q3 2025. Closed beta (~25 users) starting June 30, 2025 (as per brief).",
     resultsAndLearnings: "Masterclass in full-cycle product development. Key takeaways: strategic pivoting, and robust prompt engineering for reliable, cost-effective AI features. Navigating free-tier AI model changes (e.g., Gemini call limits) was a key challenge.",
     date: '2023 – Present',
-    links: [],
+    links: [{ name: 'Landing Page', url: 'https://careersuiteai.vercel.app/' }],
     images: [
       { src: '/careersuite1.png', alt: 'CareerSuite.AI Placeholder 1' },
       { src: '/careersuite2.png', alt: 'CareerSuite.AI Placeholder 2' },
@@ -135,6 +135,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     techStack: ['Grant Writing', 'Proposal Development', 'Grant Management', 'Fundraising', 'Non-Profit Consulting', 'Compliance & Reporting', 'Fiscal Analysis', 'Project Lifecycle Management', 'Stakeholder Communication', 'Risk Assessment', 'Strategic Planning', 'HTML Email Marketing', 'Copywriting', 'Graphic Design', 'Brand Identity', 'Data Visualization', 'Case Study Development', 'Business Process Automation', 'Data Analysis', 'Microsoft Excel (Advanced)', 'Python (for scripting/automation)'],
     resultsAndLearnings: "Successfully secured over $2MM in grant funding, increased client engagement by over 80% through targeted campaigns, and improved operational efficiency through automation. Key learnings involved the power of integrating analytical rigor with creative execution to achieve client objectives.",
     date: '2022 – 2023',
+    links: [{ name: 'Instagram', url: 'https://www.instagram.com/bay1cg/' }],
     images: [{ src: '/bay1.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay2.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay3.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay4.png', alt: 'Bay1 Consulting Group Placeholder' }, ],
   }
 ];
