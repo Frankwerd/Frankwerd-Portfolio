@@ -135,7 +135,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     techStack: ['Grant Writing', 'Proposal Development', 'Grant Management', 'Fundraising', 'Non-Profit Consulting', 'Compliance & Reporting', 'Fiscal Analysis', 'Project Lifecycle Management', 'Stakeholder Communication', 'Risk Assessment', 'Strategic Planning', 'HTML Email Marketing', 'Copywriting', 'Graphic Design', 'Brand Identity', 'Data Visualization', 'Case Study Development', 'Business Process Automation', 'Data Analysis', 'Microsoft Excel (Advanced)', 'Python (for scripting/automation)'],
     resultsAndLearnings: "Successfully secured over $2MM in grant funding, increased client engagement by over 80% through targeted campaigns, and improved operational efficiency through automation. Key learnings involved the power of integrating analytical rigor with creative execution to achieve client objectives.",
     date: '2022 – 2023',
-    images: [{ src: '/logo-fjl.png', alt: 'Bay1 Consulting Group Placeholder' }],
+    images: [{ src: '/bay1.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay2.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay3.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay4.png', alt: 'Bay1 Consulting Group Placeholder' }, ],
   }
 ];
 
@@ -315,7 +315,7 @@ export const data: CarouselCardProps[] = [
   {
     category: 'Consulting & Strategy',
     title: 'Bay1 Consulting Group',
-    src: '/logo-fjl.png', // Placeholder, ensure this image exists or replace
+    src: '/baypreview.png', // Placeholder, ensure this image exists or replace
     content: <ProjectContent projectTitle="Bay1 Consulting Group" />,
   },
 ];
