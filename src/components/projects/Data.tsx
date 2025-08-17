@@ -37,7 +37,13 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     status: "Public launch Q3 2025. Closed beta (~25 users) starting June 30, 2025 (as per brief).",
     resultsAndLearnings: "Masterclass in full-cycle product development. Key takeaways: strategic pivoting, and robust prompt engineering for reliable, cost-effective AI features. Navigating free-tier AI model changes (e.g., Gemini call limits) was a key challenge.",
     date: '2023 – Present',
-    links: [{ name: 'Landing Page', url: 'https://careersuiteai.vercel.app/' }],
+    links: [
+      { name: 'Landing Page', url: 'https://careersuiteai.vercel.app/' },
+      { name: 'Chrome Extension', url: 'https://chromewebstore.google.com/detail/careersuiteai/aoeffnegpkjeleckamfblhgcmhnmioaa' },
+      { name: 'LinkedIn', url: 'https://www.linkedin.com/company/careersuiteai/?viewAsMember=true' },
+      { name: 'Instagram', url: 'https://www.instagram.com/careersuite.ai/' },
+      { name: 'Twitter', url: 'https://x.com/CareerSuite_Ai' }
+    ],
     images: [
       { src: '/careersuite1.png', alt: 'CareerSuite.AI Placeholder 1' },
       { src: '/careersuite2.png', alt: 'CareerSuite.AI Placeholder 2' },
