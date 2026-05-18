@@ -11,22 +11,14 @@ interface ChatLandingProps {
 const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
   // Suggested questions that the user can click on
   const suggestedQuestions = [
-    {
-      icon: <MessageSquare className="h-4 w-4" />,
-      text: 'Who are you?',
-    },
-    {
-      icon: <Code className="h-4 w-4" />,
-      text: 'What projects have you worked on?',
-    },
-    {
-      icon: <Award className="h-4 w-4" />,
-      text: 'What are your skills?',
-    },
-    {
-      icon: <Mail className="h-4 w-4" />,
-      text: 'How can I contact you?',
-    },
+    "Tell me about CareerSuite.AI and how you built it.",
+    "What AI systems have you shipped in production?",
+    "Walk me through the 5-module ERP you built at SGLab.",
+    "What's your experience with grant management?",
+    "What roles are you open to right now?",
+    "What's your tech stack?",
+    "Tell me about your NSF I-Corps experience.",
+    "What's the most complex project you've led end to end?",
   ];
 
   // Animation variants for staggered animation
@@ -78,15 +70,15 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
           <motion.button
             key={index}
             className="bg-accent hover:bg-accent/80 flex w-full items-center rounded-lg px-4 py-3 transition-colors"
-            onClick={() => submitQuery(question.text)}
+            onClick={() => submitQuery(question)}
             variants={itemVariants}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="bg-background mr-3 rounded-full p-2">
-              {question.icon}
+              <MessageSquare className="h-4 w-4" />
             </span>
-            <span className="text-left">{question.text}</span>
+            <span className="text-left">{question}</span>
           </motion.button>
         ))}
       </motion.div>
