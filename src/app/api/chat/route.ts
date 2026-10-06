@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from './prompt';
 import { getContact } from './tools/getContact';
@@ -12,6 +12,12 @@ import { getSkills } from './tools/getSkills';
 // import { getWeather } from './tools/getWeather'; 
 
 export const maxDuration = 30;
+
+// Set GEMINI_API_KEY (or GOOGLE_GENERATIVE_AI_API_KEY) in .env.local / Vercel env vars
+const google = createGoogleGenerativeAI({
+  apiKey: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY,
+});
+const MODEL = process.env.GEMINI_MODEL ?? 'gemini-3.8-flash';
 
 function errorHandler(error: unknown) {
   if (error == null) {
@@ -45,7 +51,7 @@ export async function POST(req: Request) {
     };
 
     const result = streamText({
-      model: openai('gpt-4o-mini'), // Consider making model configurable via .env
+      model: google(MODEL),
       messages,
       toolCallStreaming: true, // Kept from original
       tools,
