@@ -39,8 +39,8 @@ The chat runs on Google Gemini. Create `.env.local` with your key from [Google A
 
 ```
 GEMINI_API_KEY=your-key-here
-# optional, defaults to gemini-3.8-flash
-GEMINI_MODEL=gemini-3.8-flash
+# optional, defaults to gemini-3.5-flash-lite (the most free requests per day)
+GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
 Then `pnpm install` and `pnpm dev`. On Vercel, add the same variables under Project → Settings → Environment Variables.
