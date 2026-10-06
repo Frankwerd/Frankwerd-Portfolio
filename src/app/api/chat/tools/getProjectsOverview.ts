@@ -8,6 +8,13 @@ export const getProjectsOverview = tool({
   execute: async () => {
     const projectTitles = [
       'CareerSuite.AI',
+      'Bay1 Consulting Group',
+      'HubSpot-to-Slack Ticket Notifier',
+      'Standalone Barcode Scanner (ERP-Lite)',
+      'Asana-Powered Social Media Scheduler',
+      'January: Self-Hosted AI Chatbot',
+      'AI Email Stress-Testing Tool',
+      'GrantWriter AI',
       'NSF I-Corps (AgTech Project)',
       'HAV Project (Lemelson-MIT)',
       'Project FiVR (Samsung Solve for Tomorrow)',

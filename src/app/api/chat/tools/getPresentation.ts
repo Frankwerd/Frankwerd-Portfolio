@@ -8,7 +8,7 @@ export const getPresentation = tool({
   execute: async () => {
     return {
       presentation:
-        "I'm Francis J. LiButti, a Strategic Project Manager and Data Analyst at the forefront of AI innovation. I build scalable, data-driven solutions and drive impact across tech and venture sectors. My passion centers on AI strategy and full-spectrum problem-solving.",
+        "I'm Francis (Frankie) J. LiButti, a Growth Engineer at GatherUp and founder of Bay1 Consulting Group, based in Bayonne, NJ. I design and ship AI systems, automations and websites end to end, from LLM chatbots and Claude + MCP agent tooling to custom ERPs and CRM pipelines. My passion is full-spectrum problem-solving: learning fast, strategizing, and building.",
     };
   },
 });

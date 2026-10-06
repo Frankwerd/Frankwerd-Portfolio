@@ -8,11 +8,11 @@ export function Presentation() {
   // Personal information
   const profile = {
     name: 'Francis LiButti',
-    age: '23 years old',
+    role: 'Growth Engineer at GatherUp',
     location: 'Bayonne, New Jersey',
     // Add a newline character after the emoji
     description:
-      "Hey 👋 I'm Francis, but you can call me Frankie. I'm a Strategic Project Manager and Data Analyst, driving innovation at the intersection of AI and data. Based in New Jersey, I'm passionate about building scalable, data-driven solutions and tackling complex challenges head-on!",
+      "Hey 👋 I'm Francis, but you can call me Frankie. I'm a Growth Engineer at GatherUp and the founder of Bay1 Consulting Group, where I build AI systems, automations and websites end to end. From Gemini chatbots and Claude + MCP agent tooling to custom ERPs and HubSpot pipelines, I love turning messy problems into shipped products.",
     src: '/profil-frank.png',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
@@ -81,7 +81,7 @@ export function Presentation() {
               {profile.name}
             </h1>
             <div className="mt-1 flex flex-col gap-1 md:flex-row md:items-center md:gap-4">
-              <p className="text-muted-foreground">{profile.age}</p>
+              <p className="text-muted-foreground">{profile.role}</p>
               <div className="bg-border hidden h-1.5 w-1.5 rounded-full md:block" />
               <p className="text-muted-foreground">{profile.location}</p>
             </div>
@@ -103,7 +103,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Developer', '42 Paris', 'Sport', 'SaaS Builder'].map(
+            {['AI Systems', 'Growth Engineering', 'Automation', 'Web Development', 'Founder'].map(
               (tag) => (
                 <span
                   key={tag}

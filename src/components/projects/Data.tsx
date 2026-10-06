@@ -34,11 +34,12 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       'REST APIs', 'Google Workspace (Gmail, Sheets, Drive)', 'Modular Architecture', 
       'Human-in-the-Loop (HITL) System Design', 'Prompt Engineering', 'Browser Extension Development'
     ],
-    status: "Public launch Q3 2025. Closed beta (~25 users) starting June 30, 2025 (as per brief).",
+    status: "Shipped 6 major releases from MVP to public beta. Cut manual data entry by 95%, saving users 5+ hours per week, with 100% uptime on the multi-LLM (Gemini + Groq) pipeline. A free AI resume analyzer is also live at careersuiteai.vercel.app.",
     resultsAndLearnings: "Masterclass in full-cycle product development. Key takeaways: strategic pivoting, and robust prompt engineering for reliable, cost-effective AI features. Navigating free-tier AI model changes (e.g., Gemini call limits) was a key challenge.",
-    date: '2023 – Present',
+    date: 'Feb 2025 – Sep 2025',
     links: [
       { name: 'Landing Page', url: 'https://careersuiteai.vercel.app/' },
+      { name: 'Open-source backend (GitHub)', url: 'https://github.com/Frankwerd/CareerSuite.Ai_Google-Apps-Script-Backend' },
       { name: 'Chrome Extension', url: 'https://chromewebstore.google.com/detail/careersuiteai/aoeffnegpkjeleckamfblhgcmhnmioaa' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/company/careersuiteai/?viewAsMember=true' },
       { name: 'Instagram', url: 'https://www.instagram.com/careersuite.ai/' },
@@ -50,6 +51,106 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       { src: '/careersuite3.png', alt: 'CareerSuite.AI Placeholder 2' },
       { src: '/careersuite4.png', alt: 'CareerSuite.AI Placeholder 2' },
     ],
+  },
+  {
+    title: "HubSpot-to-Slack Ticket Notifier",
+    role: "Creator",
+    description: "Custom middleware that closes a visibility gap in HubSpot: every inquiry instantly becomes a rich Slack alert with a direct link to the ticket.",
+    context: "Our team's automated pipeline needed instant ticket creation on specific triggers, but HubSpot's native automation couldn't generate tickets in that workflow, so customer inquiries could sit unnoticed in the CRM.",
+    processHighlights: [
+      "Configured a HubSpot Private App webhook to fire on form submissions and events.",
+      "The script parses the webhook and queries the HubSpot CRM API for deep-linked contact and ticket data, including inquiry type and message.",
+      "Pushes a formatted notification to a dedicated Slack channel via incoming webhooks, with a button linking straight to the ticket.",
+    ],
+    solutionSummary: "A zero-cost, serverless Google Apps Script bridge that makes sure every inquiry is accounted for.",
+    techStack: ["Google Apps Script", "HubSpot CRM API", "Slack Webhooks", "REST APIs", "Serverless Architecture"],
+    date: "Feb 2026 – Mar 2026",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/HubSpot-to-Slack-Ticket-Notifier" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/HubSpot-to-Slack-Ticket-Notifier", alt: "HubSpot-to-Slack Ticket Notifier on GitHub" }],
+  },
+  {
+    title: "Standalone Barcode Scanner (ERP-Lite)",
+    role: "Creator",
+    description: "A hardware-agnostic, web-based scanning interface that connects USB and Bluetooth barcode scanners to a backend ERP for warehouse inventory.",
+    processHighlights: [
+      "Real-time ingestion layer that handles rapid-fire HID scanner input.",
+      "RESTful sync of scan events with a centralized inventory database.",
+      "Responsive, feedback-rich UI that validates each SKU instantly to cut manual entry errors.",
+    ],
+    solutionSummary: "A modular ERP-Lite module focused on performance and low-latency communication.",
+    techStack: ["Python", "REST APIs", "Serverless Architecture", "Inventory Management"],
+    date: "Feb 2026 – Mar 2026",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/standalone-scanner" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/standalone-scanner", alt: "Standalone Barcode Scanner (ERP-Lite) on GitHub" }],
+  },
+  {
+    title: "Asana-Powered Social Media Scheduler",
+    role: "Creator",
+    description: "A serverless tool that schedules and publishes social media content straight from an Asana project.",
+    processHighlights: [
+      "Uses Asana custom fields for scheduling and status tracking (Ready to Review, Posted, Failed).",
+      "Modular architecture that keeps business logic separate so new platforms can be added.",
+      "Closed-loop error handling that writes the failure reason back to the Asana task.",
+      "Deployed with the AWS Serverless Application Model (SAM) for repeatable releases.",
+    ],
+    techStack: ["Python", "AWS Lambda", "AWS SAM", "Asana API", "Git"],
+    date: "Aug 2025 – Sep 2025",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/Asana-Social-Scheduler" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/Asana-Social-Scheduler", alt: "Asana-Powered Social Media Scheduler on GitHub" }],
+  },
+  {
+    title: "January: Self-Hosted AI Chatbot",
+    role: "Creator",
+    description: "An open-source, self-hosted AI chatbot template with a free-to-start Google Gemini core. Part 1 of a 12-part series toward a fully personal AI assistant.",
+    context: "Most chatbot templates default to OpenAI and need a credit card upfront. January runs on Gemini Flash-Lite so developers can start for free.",
+    solutionSummary: "A full-featured template with a customizable UI, data persistence and authentication that you can host and modify yourself.",
+    techStack: ["Next.js", "React", "Vercel AI SDK", "Google Gemini", "shadcn/ui", "Tailwind CSS", "Neon Postgres", "Auth.js"],
+    date: "Aug 2025",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/January-A-Self-Hosted-Open-Source-AI-Chatbot-Template-for-Next.js" },
+      { name: "Live demo", url: "https://self-hosted-open-source-ai-chatbot.vercel.app" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/January-A-Self-Hosted-Open-Source-AI-Chatbot-Template-for-Next.js", alt: "January: Self-Hosted AI Chatbot on GitHub" }],
+  },
+  {
+    title: "AI Email Stress-Testing Tool",
+    role: "Creator",
+    description: "A desktop app that generates large, realistic email datasets with Gemini to stress-test email parsing and workflow automation.",
+    context: "Testing the email parsers behind CareerSuite and FundingFlock AI needed hundreds of unique, realistic emails, which was impractical to write by hand.",
+    processHighlights: [
+      "Gemini generates a unique subject and body for every email from user-defined prompts.",
+      "Python GUI built with ttkbootstrap, multithreaded so the UI stays responsive during bulk sends, with cancellation.",
+      "Packaged as a standalone Windows .exe with PyInstaller; source on GitHub.",
+    ],
+    techStack: ["Python", "Google Gemini API", "ttkbootstrap", "Multithreading", "PyInstaller"],
+    date: "Aug 2025",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/ai-email-stress-tool" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/ai-email-stress-tool", alt: "AI Email Stress-Testing Tool on GitHub" }],
+  },
+  {
+    title: "GrantWriter AI",
+    role: "Creator (in development)",
+    description: "A browser extension concept that speeds up grant applications for non-profits.",
+    processHighlights: [
+      "AI engine that analyzes Requests for Proposals (RFPs).",
+      "Intelligent autofill that populates forms from a master organization profile.",
+      "Guided tutorial system for complex application workflows.",
+    ],
+    techStack: ["JavaScript", "Chrome Extension APIs", "AI Integration", "UX Design", "Grant Administration"],
+    date: "Aug 2025 – Sep 2025",
+    links: [
+      { name: "GitHub", url: "https://github.com/Frankwerd/GrantWriter-AI" },
+      { name: "Backend (GitHub)", url: "https://github.com/Frankwerd/FundingFlock.Ai_Google-Apps-Script-Backend" },
+    ],
+    images: [{ src: "https://opengraph.githubassets.com/1/Frankwerd/GrantWriter-AI", alt: "GrantWriter AI on GitHub" }],
   },
   {
     title: 'NSF I-Corps (AgTech Project)',
@@ -126,10 +227,14 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
   },
   {
     title: 'Bay1 Consulting Group',
-    role: 'Founder & Lead Consultant',
-    description: "Bay1 Consulting Group was a boutique consultancy that helped organizations achieve their goals through a unique blend of strategic funding acquisition and compelling digital communication. We didn't just find the money; we built the systems and created the materials needed to secure it, report on it, and support the organization's broader mission.",
+    role: 'Founder, Lead Technical Project Manager & AI Consultant',
+    description: "Bay1 Consulting Group is my boutique firm for AI systems, automation, websites and grant management. We build it end to end, from architecture through deployment, for small businesses and mission-driven organizations.",
     context: "Specializing in empowering non-profits and small businesses, Bay1 focused on a twofold approach: acquiring and managing over $2MM in grant funding with automated compliance dashboards, and designing communication strategies including compelling proposals and high-engagement HTML email campaigns.",
     processHighlights: [
+      "Architected a modular, multi-tenant AI operations system (Claude + MCP) with a credential-isolation framework, giving secure, isolated API access across client accounts without per-client subscription costs.",
+      "Integrated WordPress, Google Analytics, Google Business Profile and Meta APIs into a unified AI-agent toolset for automated content management and reporting.",
+      "Built client websites on Shopify, WordPress and custom Node.js + React + Tailwind stacks with full SEO, GEO and AEO optimization (JSON-LD structured data, Core Web Vitals, AI search visibility).",
+      "Built Luminous Electric's website and an AI content system that publishes a blog post and Google Business Profile updates every week.",
       "Spearheaded fiscal analysis and project management for $2MM+ in grant funding across 30+ government agencies and private foundations.",
       "Designed and coded high-impact HTML email campaigns and marketing materials, increasing key metrics like click-through rates by up to 87% and user engagement by 80%.",
       "Developed automated dashboards (Excel, Python) for grant compliance tracking and performance monitoring, reducing reporting errors by 20%.",
@@ -140,8 +245,11 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     solutionSummary: "Bay1 Consulting Group provided end-to-end grant acquisition, management, and strategic communication services, leveraging data, design, and automation to drive sustainable growth for clients.",
     techStack: ['Grant Writing', 'Proposal Development', 'Grant Management', 'Fundraising', 'Non-Profit Consulting', 'Compliance & Reporting', 'Fiscal Analysis', 'Project Lifecycle Management', 'Stakeholder Communication', 'Risk Assessment', 'Strategic Planning', 'HTML Email Marketing', 'Copywriting', 'Graphic Design', 'Brand Identity', 'Data Visualization', 'Case Study Development', 'Business Process Automation', 'Data Analysis', 'Microsoft Excel (Advanced)', 'Python (for scripting/automation)'],
     resultsAndLearnings: "Successfully secured over $2MM in grant funding, increased client engagement by over 80% through targeted campaigns, and improved operational efficiency through automation. Key learnings involved the power of integrating analytical rigor with creative execution to achieve client objectives.",
-    date: '2022 – 2023',
-    links: [{ name: 'Instagram', url: 'https://www.instagram.com/bay1cg/' }],
+    date: 'Jun 2022 – Present',
+    links: [
+      { name: 'Website', url: 'https://bay1cg.vercel.app/' },
+      { name: 'Instagram', url: 'https://www.instagram.com/bay1cg/' },
+    ],
     images: [{ src: '/bay1.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay2.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay3.png', alt: 'Bay1 Consulting Group Placeholder' }, { src: '/bay4.png', alt: 'Bay1 Consulting Group Placeholder' }, ],
   }
 ];
@@ -290,6 +398,48 @@ export const data: CarouselCardProps[] = [
     content: <ProjectContent projectTitle="CareerSuite.AI" />,
   },
   {
+    category: 'Consulting & Strategy',
+    title: 'Bay1 Consulting Group',
+    src: '/baypreview.png', // Placeholder, ensure this image exists or replace
+    content: <ProjectContent projectTitle="Bay1 Consulting Group" />,
+  },
+  {
+    category: "CRM Automation",
+    title: "HubSpot-to-Slack Ticket Notifier",
+    src: "/project-hubspot-slack.svg",
+    content: <ProjectContent projectTitle="HubSpot-to-Slack Ticket Notifier" />,
+  },
+  {
+    category: "Operations Tooling",
+    title: "Standalone Barcode Scanner (ERP-Lite)",
+    src: "/project-scanner.svg",
+    content: <ProjectContent projectTitle="Standalone Barcode Scanner (ERP-Lite)" />,
+  },
+  {
+    category: "Serverless Automation",
+    title: "Asana-Powered Social Media Scheduler",
+    src: "/project-asana-scheduler.svg",
+    content: <ProjectContent projectTitle="Asana-Powered Social Media Scheduler" />,
+  },
+  {
+    category: "Open-Source AI",
+    title: "January: Self-Hosted AI Chatbot",
+    src: "/project-january.svg",
+    content: <ProjectContent projectTitle="January: Self-Hosted AI Chatbot" />,
+  },
+  {
+    category: "Developer Tooling",
+    title: "AI Email Stress-Testing Tool",
+    src: "/project-email-stress.svg",
+    content: <ProjectContent projectTitle="AI Email Stress-Testing Tool" />,
+  },
+  {
+    category: "AI for Non-Profits",
+    title: "GrantWriter AI",
+    src: "/project-grantwriter.svg",
+    content: <ProjectContent projectTitle="GrantWriter AI" />,
+  },
+  {
     category: 'Strategic Market Validation',
     title: 'NSF I-Corps (AgTech Project)',
     src: '/agtechpreview.png', 
@@ -318,11 +468,5 @@ export const data: CarouselCardProps[] = [
     title: 'Cleantech Venture (E-Scooter Retrofitting)',
     src: '/solarpreview.png', 
     content: <ProjectContent projectTitle="Cleantech Venture (E-Scooter Retrofitting)" />,
-  },
-  {
-    category: 'Consulting & Strategy',
-    title: 'Bay1 Consulting Group',
-    src: '/baypreview.png', // Placeholder, ensure this image exists or replace
-    content: <ProjectContent projectTitle="Bay1 Consulting Group" />,
   },
 ];
