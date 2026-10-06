@@ -17,7 +17,7 @@ export const maxDuration = 30;
 const google = createGoogleGenerativeAI({
   apiKey: process.env.GEMINI_API_KEY ?? process.env.GOOGLE_GENERATIVE_AI_API_KEY,
 });
-const MODEL = process.env.GEMINI_MODEL ?? 'gemini-3.8-flash';
+const MODEL = process.env.GEMINI_MODEL ?? 'gemini-3.5-flash-lite';
 
 function errorHandler(error: unknown) {
   if (error == null) {
