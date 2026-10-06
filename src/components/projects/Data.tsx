@@ -46,11 +46,74 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       { name: 'Twitter', url: 'https://x.com/CareerSuite_Ai' }
     ],
     images: [
+      { src: '/careersuite-analyzer.jpg', alt: 'CareerSuite.ai AI resume analyzer website' },
       { src: '/careersuite1.png', alt: 'CareerSuite.AI Placeholder 1' },
       { src: '/careersuite2.png', alt: 'CareerSuite.AI Placeholder 2' },
       { src: '/careersuite3.png', alt: 'CareerSuite.AI Placeholder 2' },
       { src: '/careersuite4.png', alt: 'CareerSuite.AI Placeholder 2' },
     ],
+  },
+  {
+    title: "G·GRIP AI Support Chatbot & Persona Pipeline",
+    role: "USA Marketing Lead, SGLAB Inc.",
+    description: "Two production AI systems I architected and shipped from scratch for G·GRIP, SGLAB's intelligent golf club.",
+    processHighlights: [
+      "Customer support chatbot on Gemini 2.5 Pro + GPT-4 that resolves FAQs and assists with checkout.",
+      "Python LLM inference pipeline that extracts demographic and persona signals (gender, ethno-geographic origin, user archetype) from raw social media follower datasets.",
+      "The pipeline enabled data-driven vetting across a live micro-influencer pipeline.",
+    ],
+    techStack: ["Google Gemini 2.5 Pro", "GPT-4", "Python", "LLM Inference", "Prompt Engineering", "Shopify"],
+    date: "Jan 2026 – Apr 2026",
+    links: [
+      { name: "G·GRIP on Kickstarter", url: "https://www.kickstarter.com/projects/sglab/ggrip-pro-the-first-intelligent-golf-club" },
+    ],
+    images: [{ src: "/project-ggrip-chatbot.svg", alt: "G·GRIP AI Support Chatbot & Persona Pipeline" }],
+  },
+  {
+    title: "ERP-Lite: 5-Module ERP",
+    role: "USA Marketing Lead, SGLAB Inc.",
+    description: "A custom ERP built end to end that replaced disconnected manual workflows across SGLAB's entire US operation.",
+    processHighlights: [
+      "Five modules: inventory management, order fulfillment, revenue tracking, CRM and reporting.",
+      "Google Sheets as the operational database with Google Apps Script on top.",
+      "Live REST integrations with the Shopify and HubSpot APIs.",
+      "Paired with a standalone barcode scanner module for warehouse scanning.",
+    ],
+    techStack: ["Google Apps Script", "Google Sheets", "Shopify API", "HubSpot API", "REST APIs", "Python"],
+    date: "Jan 2026 – Apr 2026",
+    links: [
+      { name: "Scanner module (GitHub)", url: "https://github.com/Frankwerd/standalone-scanner" },
+    ],
+    images: [{ src: "/project-erp-lite.svg", alt: "ERP-Lite: 5-Module ERP" }],
+  },
+  {
+    title: "Multi-Tenant AI Ops (Claude + MCP)",
+    role: "Founder, Bay1 Consulting Group",
+    description: "A modular, multi-tenant AI operations system that gives Bay1's AI agents secure, isolated access to every client's tools without per-client subscription costs.",
+    processHighlights: [
+      "Integrates WordPress, Google Analytics, Google Business Profile and Meta APIs into one AI-agent toolset for content management and reporting.",
+      "Credential-isolation framework keeps each client's API keys and OAuth tokens fully separated, with zero cross-client data exposure by design.",
+      "Resolved cross-platform Node.js compatibility issues and Google Cloud IAM policy constraints to ship a production-ready pipeline.",
+    ],
+    techStack: ["Claude", "Model Context Protocol (MCP)", "Node.js", "Google Cloud IAM", "WordPress API", "Google Analytics API", "Google Business Profile API", "Meta API"],
+    date: "Bay1 Consulting Group",
+    images: [{ src: "/project-ai-ops-mcp.svg", alt: "Multi-Tenant AI Ops (Claude + MCP)" }],
+  },
+  {
+    title: "Luminous Electric: Website & AI Content",
+    role: "Bay1 Consulting Group",
+    description: "The website for Luminous Electric, a licensed electrician in Wayne, NJ, built to bring in calls and kept fresh by an AI content system.",
+    processHighlights: [
+      "Fast, conversion-focused site with the quote button always in reach, on desktop and phone.",
+      "An AI content system publishes a new blog post every week, written from real jobs and real searches.",
+      "Up to three Google Business Profile updates a week, with zero hours of writing for the owner.",
+    ],
+    techStack: ["Web Development", "SEO / GEO / AEO", "AI Content Automation", "Google Business Profile", "Claude"],
+    date: "Client project",
+    links: [
+      { name: "Visit luminouselectricnj.com", url: "https://luminouselectricnj.com/" },
+    ],
+    images: [{ src: "/luminous-desktop.jpg", alt: "Luminous Electric website on desktop" }, { src: "/luminous-phone.jpg", alt: "Luminous Electric website on a phone" }],
   },
   {
     title: "HubSpot-to-Slack Ticket Notifier",
@@ -270,7 +333,7 @@ const ProjectContent = ({ projectTitle }: { projectTitle: string }) => {
 
   return (
     <div className="space-y-10">
-      <div className="rounded-3xl bg-[#F5F5F7] p-8 dark:bg-[#1D1D1F]">
+      <div className="rounded-3xl bg-secondary p-8 dark:bg-[#1D1D1F]">
         <div className="space-y-6">
           {projectData.date && (
             <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
@@ -355,7 +418,7 @@ const ProjectContent = ({ projectTitle }: { projectTitle: string }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-[#F5F5F7] flex items-center justify-between rounded-xl p-4 transition-colors hover:bg-[#E5E5E7] dark:bg-neutral-800 dark:hover:bg-neutral-700"
+                className="group bg-secondary flex items-center justify-between rounded-xl p-4 transition-colors hover:bg-border dark:bg-neutral-800 dark:hover:bg-neutral-700"
               >
                 <span className="font-light capitalize">{link.name}</span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -402,6 +465,30 @@ export const data: CarouselCardProps[] = [
     title: 'Bay1 Consulting Group',
     src: '/baypreview.png', // Placeholder, ensure this image exists or replace
     content: <ProjectContent projectTitle="Bay1 Consulting Group" />,
+  },
+  {
+    category: "Production AI",
+    title: "G·GRIP AI Support Chatbot & Persona Pipeline",
+    src: "/project-ggrip-chatbot.svg",
+    content: <ProjectContent projectTitle="G·GRIP AI Support Chatbot & Persona Pipeline" />,
+  },
+  {
+    category: "Operations Systems",
+    title: "ERP-Lite: 5-Module ERP",
+    src: "/project-erp-lite.svg",
+    content: <ProjectContent projectTitle="ERP-Lite: 5-Module ERP" />,
+  },
+  {
+    category: "AI Agents",
+    title: "Multi-Tenant AI Ops (Claude + MCP)",
+    src: "/project-ai-ops-mcp.svg",
+    content: <ProjectContent projectTitle="Multi-Tenant AI Ops (Claude + MCP)" />,
+  },
+  {
+    category: "Client Work",
+    title: "Luminous Electric: Website & AI Content",
+    src: "/project-luminous.svg",
+    content: <ProjectContent projectTitle="Luminous Electric: Website & AI Content" />,
   },
   {
     category: "CRM Automation",

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import {
   ArrowRight,
   BriefcaseBusiness,
+  History,
   Laugh,
   Layers,
   PartyPopper,
@@ -22,17 +23,19 @@ import GitHubButton from 'react-github-btn';
 const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?', // This will trigger the carousel
+  Experience: 'Walk me through your work history. Where have you worked and what did you build there?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?', // Kept for now, can be removed if Frank prefers
+  Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
   Contact: 'How can I contact you?',
 } as const;
 
 const questionConfig = [
-  { key: 'Me', color: '#329696', icon: Laugh },
-  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
-  { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
-  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+  { key: 'Me', color: '#2B4BEE', icon: Laugh },
+  { key: 'Projects', color: '#D9822B', icon: BriefcaseBusiness },
+  { key: 'Experience', color: '#138A7E', icon: History },
+  { key: 'Skills', color: '#7C3AED', icon: Layers },
+  { key: 'Fun', color: '#C2410C', icon: PartyPopper },
+  { key: 'Contact', color: '#0E7490', icon: UserRoundSearch },
 ] as const;
 
 /* ---------- component ---------- */
@@ -85,8 +88,8 @@ function PageContent() {
       {!showProjects && (
       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center overflow-hidden">
         <div
-          className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
-          style={{ marginBottom: '-2.5rem' }}
+          className="hidden text-[10rem] leading-none font-bold text-transparent select-none sm:block lg:text-[16rem]"
+          style={{ marginBottom: '-2.5rem', fontFamily: 'var(--font-display)', WebkitTextStroke: '1.5px oklch(0.5 0.22 266 / 14%)' }}
         >
           LiButti
         </div>
@@ -107,14 +110,14 @@ function PageContent() {
 
       <div className="absolute top-6 left-6 z-20">
         <button
-          onClick={() => goToChat('Are you looking for a job?')} // This query can be refined
-          className="cursor-pointer relative flex items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          onClick={() => goToChat('What are you working on right now, and what kind of work are you open to?')}
+          className="cursor-pointer relative flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-sm font-medium text-foreground shadow-sm backdrop-blur-lg transition hover:bg-card dark:border-white dark:text-white dark:hover:bg-neutral-800"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
           </span>
-          Looking for talent?
+          Now: Growth Engineer @ GatherUp
         </button>
       </div>
 
@@ -130,11 +133,11 @@ function PageContent() {
               <WelcomeModal />
             </div>
 
-            <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-              Hey, I'm Frank 👋
+            <h2 className="text-muted-foreground mt-1 text-sm font-medium tracking-[0.2em] uppercase md:text-base">
+              Frankie LiButti · Growth Engineer & AI Builder
             </h2>
-            <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-              Problem Solver & AI Architect
+            <h1 className="mt-3 max-w-4xl text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+              I build AI systems <span className="accent-serif text-primary">that actually ship.</span>
             </h1>
           </motion.div>
 
@@ -170,35 +173,35 @@ function PageContent() {
           }}
           className="relative w-full max-w-lg"
         >
-          <div className="mx-auto flex items-center rounded-full border border-neutral-200 bg-white/30 py-2.5 pr-2 pl-6 backdrop-blur-lg transition-all hover:border-neutral-300 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
+          <div className="mx-auto flex items-center rounded-full border border-border bg-card/70 py-2.5 pr-2 pl-6 shadow-sm backdrop-blur-lg transition-all hover:border-primary/40 dark:border-neutral-700 dark:bg-neutral-800 dark:hover:border-neutral-600">
             <input
               ref={inputRef}
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask me anything…"
-              className="w-full border-none bg-transparent text-base text-neutral-800 placeholder:text-neutral-500 focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-500"
+              className="text-foreground placeholder:text-muted-foreground w-full border-none bg-transparent text-base focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-500"
             />
             <button
               type="submit"
               disabled={!input.trim()}
               aria-label="Submit question"
-              className="flex items-center justify-center rounded-full bg-[#0171E3] p-2.5 text-white transition-colors hover:bg-blue-600 disabled:opacity-70 dark:bg-blue-600 dark:hover:bg-blue-700"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 flex items-center justify-center rounded-full p-2.5 transition-colors disabled:opacity-70"
             >
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
         </form>
 
-        <div className="mt-4 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3 md:grid-cols-5">
+        <div className="mt-4 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
           {questionConfig.map(({ key, color, icon: Icon }) => (
             <Button
               key={key}
               onClick={() => goToChat(questions[key])}
               variant="outline"
-              className="shadow-none border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 backdrop-blur-lg active:scale-95 md:p-10"
+              className="shadow-none border-border hover:bg-card aspect-square w-full cursor-pointer rounded-2xl border bg-card/60 py-8 backdrop-blur-lg active:scale-95 md:p-10"
             >
-              <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
+              <div className="text-foreground/80 flex h-full flex-col items-center justify-center gap-1">
                 <Icon size={22} strokeWidth={2} color={color} />
                 <span className="text-xs font-medium sm:text-sm">{key}</span>
               </div>

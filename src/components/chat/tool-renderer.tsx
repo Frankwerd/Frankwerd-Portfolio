@@ -2,6 +2,7 @@
 import { Contact } from '../contact';
 import Crazy from '../crazy';
 import InternshipCard from '../InternshipCard';
+import Experience from '../experience';
 import { Presentation } from '../presentation';
 import AllProjects from '../projects/AllProjects';
 import Resume from '../resume';
@@ -69,6 +70,13 @@ export default function ToolRenderer({
             return (
               <div key={toolCallId} className="w-full rounded-lg">
                 <GalapagosCulture />
+              </div>
+            );
+
+          case 'getExperience':
+            return (
+              <div key={toolCallId} className="w-full rounded-lg">
+                <Experience />
               </div>
             );
 
