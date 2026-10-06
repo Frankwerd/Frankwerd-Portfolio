@@ -9,6 +9,7 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   History,
+  NotebookPen,
   Laugh,
   Layers,
   PartyPopper,
@@ -26,6 +27,7 @@ const questions = {
   Experience: 'Walk me through your work history. Where have you worked and what did you build there?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
+  Blog: 'Show me your blog. What have you written lately?',
   Contact: 'How can I contact you?',
 } as const;
 
@@ -35,6 +37,7 @@ const questionConfig = [
   { key: 'Experience', color: '#138A7E', icon: History },
   { key: 'Skills', color: '#7C3AED', icon: Layers },
   { key: 'Fun', color: '#C2410C', icon: PartyPopper },
+  { key: 'Blog', color: '#B45309', icon: NotebookPen },
   { key: 'Contact', color: '#0E7490', icon: UserRoundSearch },
 ] as const;
 
@@ -96,7 +99,13 @@ function PageContent() {
       </div>
       )}
 
-      <div className="absolute top-6 right-8 z-20">
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-3">
+        <a
+          href="/blog"
+          className="border-border bg-card/70 text-foreground hover:bg-card rounded-full border px-4 py-1.5 text-sm font-medium shadow-sm backdrop-blur-lg transition"
+        >
+          Blog
+        </a>
         <GitHubButton
           href="https://github.com/Frankwerd/Frankwerd-Portfolio"
           data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
@@ -193,7 +202,7 @@ function PageContent() {
           </div>
         </form>
 
-        <div className="mt-4 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+        <div className="mt-4 grid w-full max-w-4xl grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-7">
           {questionConfig.map(({ key, color, icon: Icon }) => (
             <Button
               key={key}

@@ -1,6 +1,7 @@
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from './prompt';
+import { getBlog } from './tools/getBlog';
 import { getContact } from './tools/getContact';
 import { getExperience } from './tools/getExperience';
 import { getCrazy } from './tools/getCrazy';
@@ -47,6 +48,7 @@ export async function POST(req: Request) {
       getContact,
       getSkills,
       getExperience,
+      getBlog,
       getCrazy,
       getJobOpportunity,
       // getWeather, // Add back if implemented and API key is available

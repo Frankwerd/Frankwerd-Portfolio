@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import {
   BriefcaseBusiness,
   History,
+  NotebookPen,
   BriefcaseIcon,
   ChevronDown,
   ChevronRight,
@@ -41,6 +42,7 @@ const questions = {
   Experience: 'Walk me through your work history. Where have you worked and what did you build there?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: "What the craziest thing you've ever done? What are your hobbies? ",
+  Blog: 'Show me your blog. What have you written lately?',
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 };
@@ -51,6 +53,7 @@ const questionConfig = [
   { key: 'Experience', color: '#138A7E', icon: History },
   { key: 'Skills', color: '#7C3AED', icon: Layers },
   { key: 'Fun', color: '#C2410C', icon: PartyPopper },
+  { key: 'Blog', color: '#B45309', icon: NotebookPen },
   { key: 'Contact', color: '#0E7490', icon: UserRoundSearch },
 ];
 

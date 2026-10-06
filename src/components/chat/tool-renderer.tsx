@@ -3,6 +3,8 @@ import { Contact } from '../contact';
 import Crazy from '../crazy';
 import InternshipCard from '../InternshipCard';
 import Experience from '../experience';
+import BlogList from '../blog-list';
+import type { PostMeta } from '@/lib/blog';
 import { Presentation } from '../presentation';
 import AllProjects from '../projects/AllProjects';
 import Resume from '../resume';
@@ -80,6 +82,13 @@ export default function ToolRenderer({
               </div>
             );
 
+          case 'getBlog':
+            return (
+              <div key={toolCallId} className="w-full rounded-lg">
+                <BlogList posts={((tool.result as { posts?: PostMeta[] })?.posts) ?? []} />
+              </div>
+            );
+
           case 'getCrazy':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
@@ -93,6 +102,11 @@ export default function ToolRenderer({
                 <InternshipCard />
               </div>
             );
+
+          // These return text for the model to relay (or navigate), so there's nothing to draw
+          case 'getJobOpportunity':
+          case 'getProjectsOverview':
+            return null;
 
           // Default renderer for other tools
           default:

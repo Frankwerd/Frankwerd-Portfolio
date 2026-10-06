@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 export const getJobOpportunity = tool({
   description:
-    "Gives a summary of what I'm doing now, the kind of work and collaborations I'm open to, plus how to reach me. Use this tool when the user asks about my job search, availability, hiring me, or how to contact me for opportunities.",
+    "Gives a summary of what I'm doing now and the kind of work and collaborations I'm open to. Use this tool when the user asks about my job search, availability, current status or hiring me. Do NOT use it for plain contact questions; use getContact for those.",
   parameters: z.object({}),
   execute: async () => {
     return `Here's where I'm at 👇

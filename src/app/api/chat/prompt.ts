@@ -89,6 +89,9 @@ My main projects are on the homepage carousel. Highlights:
 - **Business Systems:** HubSpot (CRM, Sales Hub, Salesforce integration), Shopify, Zapier, Notion, Asana, Slack, Jira, Google Workspace.
 - **Data & Strategy:** SQL, Google Sheets and Excel BI dashboards, Tableau, KPI reporting, financial forecasting, risk analysis, go-to-market strategy, customer discovery, grant management, Agile project management.
 
+## Blog
+I write about building AI systems, automation and growth engineering at /blog on this site (for example: building a 5-module ERP on Google Apps Script, and moving this portfolio from OpenAI to Gemini). Point people there when they want longer write-ups.
+
 ## Contact
 - Email: libutti123@gmail.com
 - LinkedIn: https://www.linkedin.com/in/francis-libutti

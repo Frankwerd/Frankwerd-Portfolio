@@ -96,7 +96,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       "Resolved cross-platform Node.js compatibility issues and Google Cloud IAM policy constraints to ship a production-ready pipeline.",
     ],
     techStack: ["Claude", "Model Context Protocol (MCP)", "Node.js", "Google Cloud IAM", "WordPress API", "Google Analytics API", "Google Business Profile API", "Meta API"],
-    date: "Bay1 Consulting Group",
+    date: "Ongoing",
     images: [{ src: "/project-ai-ops-mcp.svg", alt: "Multi-Tenant AI Ops (Claude + MCP)" }],
   },
   {
@@ -109,7 +109,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
       "Up to three Google Business Profile updates a week, with zero hours of writing for the owner.",
     ],
     techStack: ["Web Development", "SEO / GEO / AEO", "AI Content Automation", "Google Business Profile", "Claude"],
-    date: "Client project",
+    date: "May 2026 – Present",
     links: [
       { name: "Visit luminouselectricnj.com", url: "https://luminouselectricnj.com/" },
     ],
@@ -268,7 +268,7 @@ const AKA_PROJECT_CONTENT: ProjectContentData[] = [
     description: "A work-in-progress CRM system I am creating to automate invoice tracking and reminders.",
     context: "This project aims to exemplify sales knowledge and an understanding of the three financial models. It's part of my ongoing learning and building process.",
     techStack: ['CRM Development (Conceptual)', 'Sales Process Automation', 'Financial Modeling (Conceptual)'],
-    date: 'Ongoing',
+    date: 'May 2025',
     images: [{ src: '/invoice1.png', alt: 'Invoice Tracker Placeholder' },
       { src: '/invoice2.png', alt: 'Invoice Tracker Placeholder' },
       { src: '/invoice3.png', alt: 'Invoice Tracker Placeholder' },
@@ -453,7 +453,33 @@ const ProjectContent = ({ projectTitle }: { projectTitle: string }) => {
   );
 };
 
-export const data: CarouselCardProps[] = [
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+// "Feb 2025" -> 2025.08; "2025" -> 2025; "Present"/"Ongoing" -> Infinity; anything else -> -Infinity
+function parseDatePart(part: string): number {
+  const t = part.trim().toLowerCase();
+  if (t === 'present' || t === 'ongoing') return Infinity;
+  const m = t.match(/^([a-z]{3})[a-z]*\s+(\d{4})$/);
+  if (m) return Number(m[2]) + MONTHS.indexOf(m[1]) / 12;
+  const y = t.match(/^(\d{4})$/);
+  return y ? Number(y[1]) : -Infinity;
+}
+
+// Newest first: by end date, then by start date. Undated projects go last.
+function dateRank(title: string): [number, number] {
+  const date = AKA_PROJECT_CONTENT.find((p) => p.title === title)?.date ?? '';
+  const [start, end = start] = date.split(/\s+[–-]\s+/);
+  return [parseDatePart(end), parseDatePart(start)];
+}
+
+const byDateDesc = (a: CarouselCardProps, b: CarouselCardProps) => {
+  const [aEnd, aStart] = dateRank(a.title);
+  const [bEnd, bStart] = dateRank(b.title);
+  if (aEnd !== bEnd) return aEnd > bEnd ? -1 : 1;
+  return aStart === bStart ? 0 : aStart > bStart ? -1 : 1;
+};
+
+const cards: CarouselCardProps[] = [
   {
     category: 'Flagship AI Project',
     title: 'CareerSuite.AI',
@@ -557,3 +583,5 @@ export const data: CarouselCardProps[] = [
     content: <ProjectContent projectTitle="Cleantech Venture (E-Scooter Retrofitting)" />,
   },
 ];
+
+export const data: CarouselCardProps[] = [...cards].sort(byDateDesc);
