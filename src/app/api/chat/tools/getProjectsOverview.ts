@@ -9,6 +9,10 @@ export const getProjectsOverview = tool({
     const projectTitles = [
       'CareerSuite.AI',
       'Bay1 Consulting Group',
+      'G·GRIP AI Support Chatbot & Persona Pipeline',
+      'ERP-Lite: 5-Module ERP',
+      'Multi-Tenant AI Ops (Claude + MCP)',
+      'Luminous Electric: Website & AI Content',
       'HubSpot-to-Slack Ticket Notifier',
       'Standalone Barcode Scanner (ERP-Lite)',
       'Asana-Powered Social Media Scheduler',

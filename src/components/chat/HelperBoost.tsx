@@ -11,6 +11,8 @@ import {
 import { motion } from 'framer-motion';
 import {
   BriefcaseBusiness,
+  History,
+  NotebookPen,
   BriefcaseIcon,
   ChevronDown,
   ChevronRight,
@@ -37,23 +39,27 @@ interface HelperBoostProps {
 const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
+  Experience: 'Walk me through your work history. Where have you worked and what did you build there?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Fun: "What the craziest thing you've ever done? What are your hobbies? ",
+  Blog: 'Show me your blog. What have you written lately?',
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 };
 
 const questionConfig = [
-  { key: 'Me', color: '#329696', icon: Laugh },
-  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
-  { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
-  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+  { key: 'Me', color: '#2B4BEE', icon: Laugh },
+  { key: 'Projects', color: '#D9822B', icon: BriefcaseBusiness },
+  { key: 'Experience', color: '#138A7E', icon: History },
+  { key: 'Skills', color: '#7C3AED', icon: Layers },
+  { key: 'Fun', color: '#C2410C', icon: PartyPopper },
+  { key: 'Blog', color: '#B45309', icon: NotebookPen },
+  { key: 'Contact', color: '#0E7490', icon: UserRoundSearch },
 ];
 
 // Helper drawer data
 const specialQuestions = [
-  'Mountain Bike you said?? Show me!',
+  'Galapagos you said?? Show me!',
   'Who are you?',
   'Can I see your resume?',
   'What projects are you most proud of?',
@@ -82,6 +88,7 @@ const questionsByCategory = [
       'Can I see your resume?',
       'What makes you a valuable team member?',
       'Where are you working now?',
+      'Walk me through your work history.',
       'Why should I hire you?',
       "What's your educational background?",
     ],

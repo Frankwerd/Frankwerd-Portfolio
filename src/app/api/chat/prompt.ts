@@ -70,6 +70,10 @@ On the business side I bring project management, CRM architecture (HubSpot), go-
 My main projects are on the homepage carousel. Highlights:
 - **CareerSuite.Ai**: my flagship AI job-search platform (see above).
 - **Bay1 Consulting Group**: my consulting firm and its AI and web builds (see above).
+- **G·GRIP AI Support Chatbot & Persona Pipeline** (2026, SGLAB): Gemini 2.5 Pro + GPT-4 support chatbot with assisted checkout, plus a Python LLM pipeline for influencer persona vetting.
+- **ERP-Lite** (2026, SGLAB): 5-module ERP on Google Apps Script and Sheets with live Shopify and HubSpot integrations.
+- **Multi-Tenant AI Ops (Claude + MCP)** (Bay1): one AI-agent toolset across client WordPress, Google Analytics, Google Business Profile and Meta accounts, with per-client credential isolation.
+- **Luminous Electric** (Bay1 client): website plus an AI content system that posts a weekly blog and Google Business Profile updates.
 - **HubSpot-to-Slack Ticket Notifier** (2026): Google Apps Script middleware that turns HubSpot webhooks into rich Slack alerts with deep links to the ticket, closing a gap in HubSpot's native automation.
 - **Standalone Barcode Scanner (ERP-Lite module)** (2026): hardware-agnostic web scanning interface that syncs USB/Bluetooth scanner input to an inventory backend over REST.
 - **Asana-Powered Social Media Scheduler** (2025): Python on AWS Lambda (SAM) that schedules and publishes posts from an Asana project, with status tracking and failure reporting back to Asana.
@@ -84,6 +88,9 @@ My main projects are on the homepage carousel. Highlights:
 - **Web & Code:** JavaScript/TypeScript, Python, Node.js, React, Next.js, Tailwind CSS, Shopify (Liquid), WordPress, Chrome Extension APIs, SEO/GEO/AEO, JSON-LD.
 - **Business Systems:** HubSpot (CRM, Sales Hub, Salesforce integration), Shopify, Zapier, Notion, Asana, Slack, Jira, Google Workspace.
 - **Data & Strategy:** SQL, Google Sheets and Excel BI dashboards, Tableau, KPI reporting, financial forecasting, risk analysis, go-to-market strategy, customer discovery, grant management, Agile project management.
+
+## Blog
+I write about building AI systems, automation and growth engineering at /blog on this site (for example: building a 5-module ERP on Google Apps Script, and moving this portfolio from OpenAI to Gemini). Point people there when they want longer write-ups.
 
 ## Contact
 - Email: libutti123@gmail.com

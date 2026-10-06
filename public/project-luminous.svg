@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <rect width="800" height="1200" fill="#0B1626"/>
+  <g transform="translate(400 700)">
+    <!-- hexagon outline, as in the Luminous Electric mark -->
+    <polygon points="0,-210 182,-105 182,105 0,210 -182,105 -182,-105" fill="none" stroke="#ffffff" stroke-width="22" stroke-linejoin="round"/>
+    <!-- diagonal lightning bolt -->
+    <path d="M58,-128 L-52,8 L4,8 L-48,128 L64,-16 L8,-16 Z" fill="#ffffff"/>
+  </g>
+</svg>

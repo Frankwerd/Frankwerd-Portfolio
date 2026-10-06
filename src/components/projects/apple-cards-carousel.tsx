@@ -105,6 +105,54 @@ export const Carousel = ({
     return window && window.innerWidth < 768;
   };
 
+  // Edge scrolling: on desktop, holding the cursor near the left or right edge slides the
+  // carousel that way, faster the closer it is to the edge. The middle doesn't move it.
+  // The arrows below still scroll one card at a time.
+  const EDGE_ZONE = 0.18; // share of the width on each side that triggers scrolling
+  const MAX_SPEED = 7; // px per frame at the very edge
+  const edgeVelocity = useRef(0);
+  const followFrame = useRef<number | null>(null);
+
+  const followStep = () => {
+    const el = carouselRef.current;
+    if (!el || edgeVelocity.current === 0) {
+      followFrame.current = null;
+      return;
+    }
+    el.scrollLeft += edgeVelocity.current;
+    followFrame.current = requestAnimationFrame(followStep);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = carouselRef.current;
+    if (
+      !el ||
+      !window.matchMedia('(pointer: fine)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    )
+      return;
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    // depth: 0 at the inner edge of a zone, 1 at the carousel's edge; eased so it starts gently
+    const depth = x < EDGE_ZONE ? -(1 - x / EDGE_ZONE) : x > 1 - EDGE_ZONE ? (x - (1 - EDGE_ZONE)) / EDGE_ZONE : 0;
+    edgeVelocity.current = Math.sign(depth) * Math.max(depth ? 1 : 0, depth * depth * MAX_SPEED);
+    el.style.scrollBehavior = 'auto';
+    if (edgeVelocity.current !== 0 && followFrame.current === null)
+      followFrame.current = requestAnimationFrame(followStep);
+  };
+
+  const handleMouseLeave = () => {
+    edgeVelocity.current = 0;
+    if (carouselRef.current) carouselRef.current.style.scrollBehavior = '';
+  };
+
+  useEffect(
+    () => () => {
+      if (followFrame.current !== null) cancelAnimationFrame(followFrame.current);
+    },
+    []
+  );
+
   return (
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
@@ -114,6 +162,8 @@ export const Carousel = ({
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
           <div
             className={cn(

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#138A7E"/><stop offset="1" stop-color="#14182B"/></linearGradient>
+    <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#fff" fill-opacity="0.09"/></pattern>
+  </defs>
+  <rect width="800" height="1200" fill="url(#g)"/>
+  <rect width="800" height="1200" fill="url(#d)"/>
+  <g transform="translate(0 420)"><rect x="150" y="220" width="150" height="150" rx="26" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="330" y="220" width="150" height="150" rx="26" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="510" y="220" width="150" height="150" rx="26" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="150" y="400" width="150" height="150" rx="26" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="330" y="400" width="150" height="150" rx="26" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="510" y="400" width="150" height="150" rx="26" fill="#F2A93B"/></g>
+</svg>

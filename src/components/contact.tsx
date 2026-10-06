@@ -24,10 +24,6 @@ export function Contact() {
         url: 'https://www.instagram.com/francisjbutti/',
       },
       {
-        name: 'Discord',
-        url: 'https://discord.com/users/frankwerd',
-      },
-      {
         name: 'Github',
         url: 'https://github.com/frankwerd',
       },
@@ -59,10 +55,10 @@ export function Contact() {
             onClick={() => openLink(`mailto:${contactInfo.email}`)}
           >
             <div className="flex items-center gap-1">
-              <span className="text-base font-medium text-blue-500 hover:underline sm:text-lg">
+              <span className="text-base font-medium text-primary hover:underline sm:text-lg">
                 {contactInfo.email}
               </span>
-              <ChevronRight className="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1" />
+              <ChevronRight className="h-5 w-5 text-primary transition-transform duration-300 group-hover:translate-x-1" />
             </div>
           </div>
 

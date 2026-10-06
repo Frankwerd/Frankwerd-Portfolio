@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4285f4"/><stop offset="1" stop-color="#0b1626"/></linearGradient>
-    <radialGradient id="r" cx="0.75" cy="0.8" r="0.6"><stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#2B4BEE"/><stop offset="1" stop-color="#0B1626"/></linearGradient>
+    <pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#fff" fill-opacity="0.09"/></pattern>
   </defs>
   <rect width="800" height="1200" fill="url(#g)"/>
-  <rect width="800" height="1200" fill="url(#r)"/>
-  <g fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2">
-    <circle cx="620" cy="940" r="180"/><circle cx="620" cy="940" r="260"/><circle cx="620" cy="940" r="340"/>
-  </g>
+  <rect width="800" height="1200" fill="url(#d)"/>
+  <g transform="translate(0 420)"><path d="M400 160 C420 330 470 380 640 400 C470 420 420 470 400 640 C380 470 330 420 160 400 C330 380 380 330 400 160 Z" fill="none" stroke="#fff" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M600 160 C606 210 620 224 670 230 C620 236 606 250 600 300 C594 250 580 236 530 230 C580 224 594 210 600 160 Z" fill="#F2A93B"/></g>
 </svg>

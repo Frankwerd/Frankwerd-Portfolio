@@ -1,20 +1,18 @@
 import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Instrument_Serif, Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-// Load Inter font for non-Apple devices
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const body = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const accent = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-accent" });
 
 export const metadata: Metadata = {
   title: "Frank's Portfolio",
-  description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
+  description: "Francis (Frankie) LiButti: growth engineer and AI systems builder. Ask my AI twin about my work, projects and experience.",
   keywords: [
     "Francis John LiButti",
     "Francis LiButti",
@@ -41,13 +39,13 @@ export const metadata: Metadata = {
       url: "",
     },
   ],
-  creator: "Toukoum",
+  creator: "Francis LiButti",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "",
     title: "Frank's Portfolio",
-    description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
+    description: "Ask my AI twin about my work, projects and experience.",
     siteName: "Frank's Portfolio",
   },
   icons: {
@@ -76,7 +74,9 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
+          body.variable,
+          display.variable,
+          accent.variable,
         )}
       >
         <ThemeProvider
