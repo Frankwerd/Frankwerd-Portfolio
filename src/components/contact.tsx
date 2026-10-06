@@ -13,7 +13,7 @@ export function Contact() {
     socials: [
       {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/francis-libutti-398981156',
+        url: 'https://www.linkedin.com/in/francis-libutti',
       },
       {
         name: 'Youtube',

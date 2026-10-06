@@ -3,23 +3,22 @@ import { z } from 'zod';
 
 export const getJobOpportunity = tool({
   description:
-    "Gives a summary of what kind of job I'm looking for, plus my contact info and how to reach me. Use this tool when the user asks about my job search or how to contact me for opportunities.",
+    "Gives a summary of what I'm doing now, the kind of work and collaborations I'm open to, plus how to reach me. Use this tool when the user asks about my job search, availability, hiring me, or how to contact me for opportunities.",
   parameters: z.object({}),
   execute: async () => {
-    return `Here’s what I’m looking for 👇
+    return `Here's where I'm at 👇
 
-- 📅 **Availability**: Immediately available for a full-time position.
-- 🌍 **Location**: Open to opportunities, particularly interested in innovative tech hubs. (User can specify further if needed based on resume/brief)
-- 🧑‍💻 **Focus**: AI development, full-stack web applications, SaaS, agentic workflows, product development, project management.
-- 🛠️ **Stack/Skills**: Python, React/Next.js, JavaScript/TypeScript, LLMs (Gemini, Groq), Google Apps Script, SQL, System Design, Agile Methodologies. (Tailor further based on resume)
-- ✅ **What I bring**: Proven experience in designing and deploying end-to-end serverless AI solutions, reducing manual effort significantly. Strong background in project management, securing grant funding, data analysis, and translating complex data into strategic insights. Ambitious, a fast learner, and a "full-spectrum problem solver" ready for big challenges.
-- 🔥 I move fast, learn faster, and I’m HUNGRYYYYY for big challenges!
+- 💼 **Now**: Growth Engineer at GatherUp (full-time, remote), and I run Bay1 Consulting Group on the side.
+- 🤝 **Open to**: conversations about AI systems, growth engineering and automation work, plus Bay1 Consulting Group projects (websites, AI builds, CRM and workflow automation).
+- 🧑‍💻 **Focus**: LLM-powered tools and agents, growth and marketing systems, full-stack web apps, SEO/GEO/AEO, and CRM/ERP automation.
+- 🛠️ **Stack**: TypeScript/JavaScript, Python, React/Next.js, Google Apps Script, Gemini, Claude + MCP, HubSpot, Shopify, AWS Lambda.
+- ✅ **What I bring**: production AI systems shipped from scratch, a founder's ownership of the whole lifecycle from discovery to launch, and the business side to match (GTM strategy, project management, $2M+ in grant portfolios).
 
 📬 **Contact me** via:
 - Email: libutti123@gmail.com
-- LinkedIn: https://linkedin.com/in/francis-libutti-398981156
+- LinkedIn: https://www.linkedin.com/in/francis-libutti
 
-Let's build cool shit together ✌️
+Let's build something great together ✌️
     `;
   },
 });

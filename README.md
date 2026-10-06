@@ -30,3 +30,17 @@ This interactive experience is built upon the ingenious AI portfolio template or
 #### 🔖 Tags
 
 `#AIPortfolio` `#DataAnalytics` `#StrategicProjectManagement` `#AIInnovation` `#TechLeadership` `#ScalableSolutions` `#DigitalTransformation`
+
+---
+
+## ⚙️ Running locally
+
+The chat runs on Google Gemini. Create `.env.local` with your key from [Google AI Studio](https://aistudio.google.com/apikey):
+
+```
+GEMINI_API_KEY=your-key-here
+# optional, defaults to gemini-3.5-flash-lite (the most free requests per day)
+GEMINI_MODEL=gemini-3.5-flash-lite
+```
+
+Then `pnpm install` and `pnpm dev`. On Vercel, add the same variables under Project → Settings → Environment Variables.
