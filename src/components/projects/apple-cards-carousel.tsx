@@ -105,6 +105,56 @@ export const Carousel = ({
     return window && window.innerWidth < 768;
   };
 
+  // Mouse-follow scrolling: on desktop, the carousel glides toward the cursor's position.
+  // The arrows below still scroll one card at a time.
+  const followTarget = useRef<number | null>(null);
+  const followFrame = useRef<number | null>(null);
+
+  const followStep = () => {
+    const el = carouselRef.current;
+    const target = followTarget.current;
+    if (!el || target === null) {
+      followFrame.current = null;
+      return;
+    }
+    const diff = target - el.scrollLeft;
+    if (Math.abs(diff) < 1) {
+      followFrame.current = null;
+      return;
+    }
+    // at least 1px per frame so browsers that round scrollLeft still make progress
+    el.scrollLeft += Math.sign(diff) * Math.max(1, Math.abs(diff) * 0.12);
+    followFrame.current = requestAnimationFrame(followStep);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = carouselRef.current;
+    if (
+      !el ||
+      !window.matchMedia('(pointer: fine)').matches ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    )
+      return;
+    const rect = el.getBoundingClientRect();
+    // the middle 80% of the width maps to the full scroll range, so both ends are easy to reach
+    const ratio = Math.min(1, Math.max(0, ((e.clientX - rect.left) / rect.width - 0.1) / 0.8));
+    followTarget.current = ratio * (el.scrollWidth - el.clientWidth);
+    el.style.scrollBehavior = 'auto';
+    if (followFrame.current === null) followFrame.current = requestAnimationFrame(followStep);
+  };
+
+  const handleMouseLeave = () => {
+    followTarget.current = null;
+    if (carouselRef.current) carouselRef.current.style.scrollBehavior = '';
+  };
+
+  useEffect(
+    () => () => {
+      if (followFrame.current !== null) cancelAnimationFrame(followFrame.current);
+    },
+    []
+  );
+
   return (
     <CarouselContext.Provider
       value={{ onCardClose: handleCardClose, currentIndex }}
@@ -114,6 +164,8 @@ export const Carousel = ({
           className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
           <div
             className={cn(
